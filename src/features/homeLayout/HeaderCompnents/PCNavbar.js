@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const PCNavbar = () => {
   return (
     <>
-          <nav className="hidden sm:flex space-x-4 ml-10 text-white  text-lg font-bold  transition duration-300 ease-in-out  delay-150 ">
+          <nav className="hidden lg:flex space-x-4 ml-10 text-white text-lg font-bold transition duration-300 ease-in-out delay-150">
+
               <Link  className="hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out  delay-150" to={'/'} > 
               Home</Link>
               <Link  className="hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out  delay-150" to={'/'} > 
