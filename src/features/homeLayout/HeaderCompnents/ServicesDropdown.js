@@ -47,16 +47,26 @@ const ServicesDropdown = () => {
           onMouseLeave={handleMouseLeave}
         >
           <ul className="py-1">
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-300 delay-150">
+            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50 ">
               Item 1
             </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-300 delay-150">
+            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50 ">
               Item 2
             </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-300 delay-150">
+         
+            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50 ">
               Item 3
             </li>
-          </ul>
+            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50 ">
+              Item 4
+            </li>
+            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50 ">
+              Item 5
+            </li>
+            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50 ">
+              Item 6
+            </li>
+            </ul>
         </div>
       )}
     </div>
