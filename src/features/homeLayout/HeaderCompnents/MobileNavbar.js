@@ -30,7 +30,7 @@ className="fixed top-4 right-4 z-50 text-white hover:text-green-400 lg:hidden fo
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-black   text-white text-lg font-bold transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-64 bg-black  text-white text-lg font-bold transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -53,26 +53,26 @@ className="fixed top-4 right-4 z-50 text-white hover:text-green-400 lg:hidden fo
             </Link>
 
             {/* Services Dropdown */}
-            <div className="block py-2">
+        <div className="block py-2">
               <button
                 className="hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out delay-150 w-full text-left"
                 onClick={()=>setIsServicesOpen(!isServicesOpen)}
               >
                 <div className='flex'>
                 <span className="font-semibold">Services</span>
-                {isServicesOpen?  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="w-4 h-4 mt-1.5 pl-0.5"
-  >
-    <path
-      fillRule="evenodd"
-      d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
-      clipRule="evenodd"
-    />
-  </svg>
-: <svg
+                          {isServicesOpen?  <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4 mt-1.5 pl-0.5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          : <svg
           className="w-4 h-4 mt-1.5 pl-0.5"
           fill="none"
           stroke="currentColor"
@@ -120,31 +120,31 @@ className="fixed top-4 right-4 z-50 text-white hover:text-green-400 lg:hidden fo
                   <div className='flex'>
                 <span className="font-semibold">Products</span>
                 {isProductsOpen?  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    className="w-4 h-4 mt-1.5 pl-0.5"
-  >
-    <path
-      fillRule="evenodd"
-      d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
-      clipRule="evenodd"
-    />
-  </svg>
-: <svg
-          className="w-4 h-4 mt-1.5 pl-0.5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg> }
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4 mt-1.5 pl-0.5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+                      : <svg
+                    className="w-4 h-4 mt-1.5 pl-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg> }
      
                 </div>
               </button>
