@@ -3,7 +3,7 @@ const Home = () => {
   return (
     <>
       <main className=''>
-      <div className="h-screen border-y border-green-300 flex   flex-col text-white   justify-between itms-center lg:flex-row  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="  h-screen border-y border-green-300 flex   flex-col text-white   justify-between itms-center lg:flex-row  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 mb-4">
       <div className='  max-w-7xl h-96 mx-auto flex flex-col text-center justify-center my-auto '>
       <h1 className='font-extrabold text-4xl '> Welcome to <span className='text-green-400' >Corfoc</span>  technologies!!</h1>
       <div className='pt-4 mt-5'>
@@ -14,7 +14,7 @@ const Home = () => {
 
       </div>
       <div className= ' bg-blue-800 bg-transparent max-w-7xl h-96 my-auto mx-auto flex flex-col text-center justify-center '>
-      <img className='py-auto w-auto h-auto' src={image1} alt="Example" />
+      <img className=' h-auto w-auto' src={image1} alt="Example" />
       
       </div>
     
