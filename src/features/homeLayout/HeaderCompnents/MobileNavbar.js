@@ -10,8 +10,10 @@ const MobileNavbar = () => {
   return (
     <div>
       {/* Hamburger Button */}
+      
+      <div className='absolute top-4  right-4 z-50'>
       <button
-className="fixed top-4 right-4 z-50 text-white hover:text-green-400 lg:hidden focus:outline-none transition duration-300 ease-in-out"
+className=" relative  text-white hover:text-green-400 lg:hidden focus:outline-none transition duration-300 ease-in-out"
 
 
         onClick={() => {
@@ -27,6 +29,7 @@ className="fixed top-4 right-4 z-50 text-white hover:text-green-400 lg:hidden fo
           <span className='text-3xl'>&#9776;</span> // Hamburger icon
         )}
       </button>
+      </div>
 
       {/* Sidebar */}
       <aside

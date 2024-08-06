@@ -14,7 +14,7 @@ const Home = () => {
 
       </div>
       <div className= ' bg-blue-800 bg-transparent max-w-7xl h-96 my-auto mx-auto flex flex-col text-center justify-center '>
-      <img className='py-auto e ' src={image1} alt="Example" />
+      <img className='py-auto w-auto h-auto' src={image1} alt="Example" />
       
       </div>
     
