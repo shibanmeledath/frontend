@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './style.css'
-import App from './App'
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import './style.css';  // Ensure this is necessary, otherwise combine into index.css
+import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path='/*' element={  <App />}/>
-      </Routes>
+    <Router basename="/frontend"> git 
+      <App />
     </Router>
-  
   </React.StrictMode>
 );
-
