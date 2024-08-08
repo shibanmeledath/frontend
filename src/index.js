@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Router basename="/frontend"> git 
+    <Router basename="/frontend"> 
       <App />
     </Router>
   </React.StrictMode>

@@ -6,7 +6,7 @@ import About from "./features/homeLayout/About";
 function App() {
   return <>
   <Routes>
-    <Route path="/Corfoc" element={<HomeLayout/>}>
+    <Route path="/" element={<HomeLayout/>}>
     <Route index element={<Main/>}/>
     <Route path="/about" element={<About/>} />
     </Route>
