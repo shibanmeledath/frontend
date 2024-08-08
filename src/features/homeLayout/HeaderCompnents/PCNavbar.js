@@ -9,7 +9,7 @@ const PCNavbar = () => {
 
               <Link  className="hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out  delay-150" to={'/'} > 
               Home</Link>
-              <Link  className="hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out  delay-150" to={'about'} > 
+              <Link  className="hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out  delay-150" to={'/about'} > 
               About</Link>
               <Link  className="hover:underline underline-offset-4 hover:text-green-400 transition duration-200 ease-in-out  delay-150" to={'/'} > 
              <ServicesDropdown/> </Link>
