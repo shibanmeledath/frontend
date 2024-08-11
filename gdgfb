@@ -1,0 +1,229 @@
+[33mcommit 4d0a226400cf4c41f6e5806f3c1891c617a6ba54[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Fri Aug 9 00:09:48 2024 +0530
+
+    page not found added
+
+[33mcommit a6b7f06ef8d68af2e6b4e56a5fbe664a120f9d30[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Fri Aug 9 00:02:16 2024 +0530
+
+    pblish issue
+
+[33mcommit 5fedb98a155bc3088cac7d452e439908b8f9219e[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 23:46:43 2024 +0530
+
+    replace /corfoc with /
+
+[33mcommit 1a04e38837ea9c1f6e7dad416f1233cca36c4d51[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 23:01:14 2024 +0530
+
+    changed yml
+
+[33mcommit aa1d120985b28dd67d7066dadf29ba8fff7fdd82[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 22:55:13 2024 +0530
+
+    baseurl added to index.js
+
+[33mcommit 2c36112ae397c2dfe0a622b13067b7e67f609362[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 22:45:13 2024 +0530
+
+    npm run build
+
+[33mcommit cec3b2726d47979550d3be264172bfc2de0705bc[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 21:38:31 2024 +0530
+
+    to frontend '
+
+[33mcommit da0037a6aa94e35922c4e8aad9b9c13b3d04d01d[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 21:21:20 2024 +0530
+
+    publish issue
+
+[33mcommit 7003d26c251dbf20bf5a201adcccccb00e8ceb1a[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 20:56:53 2024 +0530
+
+    pblish issue
+
+[33mcommit 68ce9be8c214ef5c39d8a4e6c58dce43d32025cf[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 20:54:32 2024 +0530
+
+    publish issue
+
+[33mcommit d05abf12ee4e23c214df938bbd213c6629b919cb[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 20:51:23 2024 +0530
+
+    publish issue
+
+[33mcommit 36a045b1796cbac3e8c452ddea48a1356dbd4a83[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 20:42:07 2024 +0530
+
+    publish issue
+
+[33mcommit d5c7a523f13e0dd1ffb3d32be0a6097d9f7d26b7[m
+Merge: acb8d27 664030d
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 20:29:30 2024 +0530
+
+    publis issue
+
+[33mcommit acb8d27262c101f9a6f135538c49b7829caafe7b[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 20:28:26 2024 +0530
+
+    publish issue corrected'
+
+[33mcommit 664030d6fda1d8fccd91df5902bd9117f1a5dd72[m
+Author: Shiban.M <91078970+shibanmeledath@users.noreply.github.com>
+Date:   Thu Aug 8 20:24:48 2024 +0530
+
+    Update package.json
+
+[33mcommit cee3941df0ac183f47095d2267c9729e61a592a5[m
+Author: Shiban.M <91078970+shibanmeledath@users.noreply.github.com>
+Date:   Thu Aug 8 19:58:52 2024 +0530
+
+    Update node.js.yml
+
+[33mcommit ba59c7c720220719dd20fbf632ffa4225570fca1[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 19:57:16 2024 +0530
+
+    npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+[33mcommit 3c0c7d7042e17bdaac2190ca72ba4542ff9df25b[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 19:54:04 2024 +0530
+
+    unused import of test.js removed
+
+[33mcommit d101a32e0468ac7413feb21e76001e090c423cdf[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 19:51:48 2024 +0530
+
+    npm test deleted from .yml
+
+[33mcommit c75262997ec990136f9ab623e38411ee55fc2728[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 19:35:31 2024 +0530
+
+    test error corection
+
+[33mcommit bd811ac3ee28b2e713c56bfb7abe8f617fda8830[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 18:34:25 2024 +0530
+
+    test added
+
+[33mcommit 3af3d0723f2610e38aa3a2c98e7a1217a8417481[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 18:27:49 2024 +0530
+
+    workflow added
+
+[33mcommit 41bda260668fa9a6827e786108cd0369a2895828[m
+Author: Shiban.M <91078970+shibanmeledath@users.noreply.github.com>
+Date:   Thu Aug 8 18:24:53 2024 +0530
+
+    Create node.js.yml
+
+[33mcommit 409ce1245ce95ce95c01c912896a07db8547caa9[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 17:58:20 2024 +0530
+
+    delete workflow
+
+[33mcommit 48439def1cd0f34f682fd65ebaf45cb12538a237[m
+Merge: e05f0c0 d5d6030
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Thu Aug 8 17:57:40 2024 +0530
+
+    Merge branch 'main' of https://github.com/shibanmeledath/Corfoc
+
+[33mcommit d5d6030ee7df9668f026dc84024beda85c641ca3[m
+Author: Shiban.M <91078970+shibanmeledath@users.noreply.github.com>
+Date:   Wed Aug 7 19:58:07 2024 +0530
+
+    Create node.js.yml
+
+[33mcommit e05f0c0712eeeed1e9c6f42f563c08555adcd5ff[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Wed Aug 7 14:47:37 2024 +0530
+
+    about section initiated replace home.js with main.js and added home,js and about.js inside it
+
+[33mcommit 4ed6caa520a8b45f97aa1f6dbf3f8f3ba5f8d535[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Wed Aug 7 00:46:17 2024 +0530
+
+    bg image changed
+
+[33mcommit 3538261f0d28703250e10c02345f70c7c1ec9223[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Wed Aug 7 00:16:01 2024 +0530
+
+    added spacing between  pc menu items and aslo removed unwanted transitions
+
+[33mcommit 32058903ddb818cc9e8f71ed174e4f51c5c9ab8f[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Tue Aug 6 23:28:53 2024 +0530
+
+    menu icon position problem fixed
+
+[33mcommit 11c908b0f6187cd828ed0d750435642e02e55284[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Tue Aug 6 21:11:04 2024 +0530
+
+    main section initiated..for lg flex-row and rest flex-col border to y and sample image added
+
+[33mcommit 0eaf3aa9358a5c9984e3a89ead40b0d5ffb151ad[m
+Author: Shiban.M <91078970+shibanmeledath@users.noreply.github.com>
+Date:   Tue Aug 6 00:53:17 2024 +0530
+
+    Create SECURITY.md
+
+[33mcommit 02d545426d921c074d575455c1462fb279eeda33[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Tue Aug 6 00:48:47 2024 +0530
+
+    mobile and pc  menu updated..media query set to menu and added containeer to home
+
+[33mcommit 0f5ecb458f4292c247e57334330781c1f278953e[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Mon Aug 5 14:55:24 2024 +0530
+
+    mobile menu set to left side and added drop down items
+
+[33mcommit 6ebd0952b1e7573bb425c65fd5c1a3c2eacf089e[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Mon Aug 5 01:01:14 2024 +0530
+
+    header just created
+
+[33mcommit cc2d9c5d3c905acf9884080bb92f2aece9f36fd9[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Sun Aug 4 22:41:15 2024 +0530
+
+    git attribute added
+
+[33mcommit 8c7f2b4f07abda3d8f2f8cd196ded27de4a04b82[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Sun Aug 4 22:33:40 2024 +0530
+
+    Normalize all line endings
+
+[33mcommit ff7a7986b10c9efe8e090287b36dd4089b96abd7[m
+Author: Shiban <2000.shiban@gmail.com>
+Date:   Sun Aug 4 20:48:33 2024 +0530
+
+    Initialize project using Create React App
