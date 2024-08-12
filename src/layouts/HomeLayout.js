@@ -4,14 +4,11 @@ import BackToTop from "../features/homeLayout/BackToTop"
 const HomeLayout = () => {
   return (
     <>
-<section id="home">
+<section  id="home">
 <Header/>
 <Outlet/>
 <BackToTop/>
 </section>
- 
-
-   
     </>
   )
 }

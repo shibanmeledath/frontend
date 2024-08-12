@@ -1,15 +1,41 @@
-import React from 'react'
-import { HashLink } from 'react-router-hash-link'
-const BackToTop = () => {
-  return (
-    <>
-      <section className='w-10 h-10 bg-slate-800 fixed right-0 bottom-0'>
-        <HashLink smooth to={'#home'}> 
-            h
-         </HashLink>
-      </section>
-    </>
-  )
-}
+import React, { useState, useEffect } from 'react';
 
-export default BackToTop
+const BackToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling effect
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <button
+      onClick={scrollToTop}
+      className={`fixed bottom-4 right-4 p-2 bg-green-300 rounded-full text-white shadow-md transition-opacity duration-300 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+      aria-label="Back to Top"
+    >
+      ↑
+    </button>
+  );
+};
+
+export default BackToTop;

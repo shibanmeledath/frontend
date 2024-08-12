@@ -5,10 +5,10 @@ const Header = () => {
 
   return (
     <>
-       <header className=" w-full ">
+       <header className=" w-full fixed">
       <div className="  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <h2 className="text-white text-4xl">CORFOC</h2>
+          <h2 className="text-white text-4xl font-semibold">CORFOC</h2>
           <div className="flex items-center">
    
 

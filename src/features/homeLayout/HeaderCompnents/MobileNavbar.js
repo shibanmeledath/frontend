@@ -52,7 +52,7 @@ className=" relative  text-white hover:text-green-400 lg:hidden focus:outline-no
               to="#about"
               onClick={() => setIsOpen(false)}
             >
-              About
+              About   
             </HashLink>
 
             {/* Services Dropdown */}
