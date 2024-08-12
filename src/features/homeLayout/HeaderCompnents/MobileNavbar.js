@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,20 +40,20 @@ className=" relative  text-white hover:text-green-400 lg:hidden focus:outline-no
         <div className="px-4 py-6">
           <h2 className="text-lg font-bold mb-4">CORFOC</h2>
           <nav>
-            <Link
+            <HashLink
               className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out delay-150"
-              to="/"
+              to="#home"
               onClick={() => setIsOpen(false)}
             >
               Home
-            </Link>
-            <Link
+            </HashLink>
+            <HashLink
               className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out delay-150"
-              to="/about"
+              to="#about"
               onClick={() => setIsOpen(false)}
             >
               About
-            </Link>
+            </HashLink>
 
             {/* Services Dropdown */}
         <div className="block py-2">
@@ -96,19 +96,19 @@ className=" relative  text-white hover:text-green-400 lg:hidden focus:outline-no
               {isServicesOpen && (
                 <ul className="ml-4 mt-2 space-y-2">
                   <li>
-                    <Link to="/service1" onClick={() => setIsOpen(false)} className="hover:text-green-400">
+                    <HashLink to="#service1" onClick={() => setIsOpen(false)} className="hover:text-green-400">
                       Service 1
-                    </Link>
+                    </HashLink>
                   </li>
                   <li>
-                    <Link to="/service2" onClick={() => setIsOpen(false)} className="hover:text-green-400">
+                    <HashLink to="#service2" onClick={() => setIsOpen(false)} className="hover:text-green-400">
                       Service 2
-                    </Link>
+                    </HashLink>
                   </li>
                   <li>
-                    <Link to="/service3" onClick={() => setIsOpen(false)} className="hover:text-green-400">
+                    <HashLink to="#service3" onClick={() => setIsOpen(false)} className="hover:text-green-400">
                       Service 3
-                    </Link>
+                    </HashLink>
                   </li>
                 </ul>
               )}
@@ -154,31 +154,31 @@ className=" relative  text-white hover:text-green-400 lg:hidden focus:outline-no
               {isProductsOpen && (
                 <ul className="ml-4 mt-2 space-y-2">
                   <li>
-                    <Link to="/product1" onClick={() => setIsOpen(false)} className="hover:text-green-400">
+                    <HashLink to="#product1" onClick={() => setIsOpen(false)} className="hover:text-green-400">
                       Product 1
-                    </Link>
+                    </HashLink>
                   </li>
                   <li>
-                    <Link to="/product2" onClick={() => setIsOpen(false)} className="hover:text-green-400">
+                    <HashLink to="#product2" onClick={() => setIsOpen(false)} className="hover:text-green-400">
                       Product 2
-                    </Link>
+                    </HashLink>
                   </li>
                   <li>
-                    <Link to="/product3" onClick={() => setIsOpen(false)} className="hover:text-green-400">
+                    <HashLink to="#product3" onClick={() => setIsOpen(false)} className="hover:text-green-400">
                       Product 3
-                    </Link>
+                    </HashLink>
                   </li>
                 </ul>
               )}
             </div>
 
-            <Link
+            <HashLink
               className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out delay-150"
-              to="/contact"
+              to="#contact"
               onClick={() => setIsOpen(false)}
             >
               Contact Us
-            </Link>
+            </HashLink>
           </nav>
           <button
             className="w-full text-black bg-green-400 px-5 py-3 hover:bg-white mt-4 transition ease-in-out duration-300"
