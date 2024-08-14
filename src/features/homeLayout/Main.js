@@ -4,11 +4,10 @@ import Contact from './Contact';
 const Main = () => {
   return (
     <>
-    <section className=''>
-    <Home/>
+  <Home/>
   < About/>
   <Contact/>
-    </section>
+  
 
   </>
   )

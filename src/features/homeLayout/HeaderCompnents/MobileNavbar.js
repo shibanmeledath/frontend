@@ -32,7 +32,7 @@ const MobileNavbar = () => {
       >
         <div className="px-6 py-6">
           {/* Close Button */}
-          <div className='absolute top-4 right-4'>
+          <div className='absolute top-3 right-5'>
             <button
               className="relative text-white hover:text-green-400 focus:outline-none transition duration-300 ease-in-out"
               onClick={() => {
@@ -41,11 +41,14 @@ const MobileNavbar = () => {
                 setIsProductsOpen(false);
               }}
             >
-              <span className='text-4xl'>&times;</span> 
+                 {isOpen && (
+             <span className='text-4xl'>&times;</span> // Hamburger icon
+          )}
+              
             </button>
           </div>
 
-          <h2 className="text-xl font-bold mb-6">CORFOC</h2>
+          <h2 className="text-xl font-bold mb-6 ">CORFOC</h2>
           <nav className="space-y-4">
             <HashLink
               className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out"
