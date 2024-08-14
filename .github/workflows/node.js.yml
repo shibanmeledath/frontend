@@ -26,12 +26,6 @@ jobs:
 
     - run: npm run build --if-present
 
-    - name: Clean working directory
-      run: git clean -fdx
-
-    - name: Fetch all branches
-      run: git fetch origin +refs/heads/*:refs/remotes/origin/*
-
     - name: Deploy with gh-pages
       uses: peaceiris/actions-gh-pages@v4
       with:
