@@ -2,26 +2,45 @@ import image1 from '../../images/hero3.png'
 const Home = () => {
   return (
     <>
-        <div id='home' className="min-h-screen border-y border-b-0 border-green-300 flex flex-col text-white justify-between items-center lg:flex-row max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 mb-4">
-      <div className='  max-w-7xl h-96 mx-auto flex flex-col text-center justify-center my-auto '>
-       
-      <h1 className="font-extrabold text-4xl shadow-lg mt-10 sm:mt-12 md:mt-16 lg:mt-20">
+     <div
+  id="home"
+  className="min-h-screen flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto px-6 lg:px-8 py-12 space-y-12 lg:space-y-0 lg:space-x-8"
+>
+  {/* Left Section: Text Content */}
+  <div className="flex-1 flex flex-col justify-center text-center lg:text-left">
+  <div className='pt-6 sm:pt-8 md:pt-10 lg:pt-12'>
+  <h1 className="font-extrabold text-4xl shadow-lg mt-4 sm:mt-8 md:mt-12 lg:mt-16">
   Welcome to <span className="text-green-400">Corfoc</span> technologies!!
 </h1>
 
-      <div className='pt-4 mt-5'>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, voluptas!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, obcaecati!</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, ullam.</p>
-      </div>
+</div>
 
-      </div>
-      <div className= ' bg-blue-800 bg-transparent max-w-7xl h-96 my-auto mx-auto flex flex-col text-center justify-center '>
-      <img className=' mt-10 sm:mt-12 md:mt-16 lg:mt-20 h-auto w-auto sm:mb-12 md:mb-16 lg:mb-20' src={image1} alt="Example" />
-      
-    </div>      
-       
- </div>
+    <div className="text-white space-y-4 mt-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam,
+        voluptas!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores,
+        obcaecati!
+      </p>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis,
+        ullam.
+      </p>
+    </div>
+  </div>
+
+  {/* Right Section: Image */}
+  <div className="flex-1 flex justify-center items-center">
+    <img
+      className="max-w-full h-auto object-contain"
+      src={image1}
+      alt="Example"
+    />
+  </div>
+</div>
+
     </>
   )
 }

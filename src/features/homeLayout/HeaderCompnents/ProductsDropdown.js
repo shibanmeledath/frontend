@@ -23,9 +23,11 @@ const ProductsDropdown = () => {
         className="cursor-pointer flex items-center space-x-2"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        tabIndex="0"
+        aria-haspopup="true"
+        aria-expanded={isOpen}
       >
-        <span className="font-semibold">Products </span>
-        
+        <span className="font-semibold">Products</span>
         <svg
           className="w-4 h-4"
           fill="none"
@@ -48,24 +50,16 @@ const ProductsDropdown = () => {
           onMouseLeave={handleMouseLeave}
         >
           <ul className="py-1">
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50">
-              Item 1
-            </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50">
-              Item 2
-            </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50">
-              Item 3
-            </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50">
-              Item 4
-            </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50">
-              Item 5
-            </li>
-            <li className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-50">
-              Item 6
-            </li>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <li
+                key={index}
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-200"
+                role="menuitem"
+                tabIndex="0"
+              >
+                Item {index + 1}
+              </li>
+            ))}
           </ul>
         </div>
       )}
