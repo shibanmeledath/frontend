@@ -13,7 +13,7 @@ const PCNavbar = () => {
     <nav className="hidden lg:flex items-center space-x-10 ml-10 text-white text-lg font-bold transition duration-300 ease-in-out">
       <HashLink
         className={`hover:underline underline-offset-4 transition duration-300 ease-in-out ${
-          isActive('#home') ? 'text-green-400 underline' : 'hover:text-green-400'
+          isActive('#home') ? 'text-green-400 ' : 'hover:text-green-400'
         }`}
         smooth
         to="#home"
@@ -23,7 +23,7 @@ const PCNavbar = () => {
       </HashLink>
       <HashLink
         className={`hover:underline underline-offset-4 transition duration-300 ease-in-out ${
-          isActive('#about') ? 'text-green-400 underline' : 'hover:text-green-400'
+          isActive('#about') ? 'text-green-400 ' : 'hover:text-green-400'
         }`}
         smooth
         to="#about"
@@ -34,7 +34,7 @@ const PCNavbar = () => {
       <div className="relative">
         <HashLink
           className={`flex items-center space-x-2 hover:underline underline-offset-4 transition duration-200 ease-in-out ${
-            isActive('#services') ? 'text-green-400 underline' : 'hover:text-green-400'
+            isActive('#services') ? 'text-green-400 ' : 'hover:text-green-400'
           }`}
           smooth
           to="#services"
@@ -47,7 +47,7 @@ const PCNavbar = () => {
       <div className="relative">
         <HashLink
           className={`flex items-center space-x-2 hover:underline underline-offset-4 transition duration-300 ease-in-out ${
-            isActive('#products') ? 'text-green-400 underline' : 'hover:text-green-400'
+            isActive('#products') ? 'text-green-400 ' : 'hover:text-green-400'
           }`}
           smooth
           to="#products"
@@ -59,7 +59,7 @@ const PCNavbar = () => {
       </div>
       <HashLink
         className={`hover:underline underline-offset-4 transition duration-300 ease-in-out ${
-          isActive('#contact') ? 'text-green-400 underline' : 'hover:text-green-400'
+          isActive('#contact') ? 'text-green-400 ' : 'hover:text-green-400'
         }`}
         smooth
         to="#contact"

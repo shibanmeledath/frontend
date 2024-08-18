@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 
 const ServicesDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +14,7 @@ const ServicesDropdown = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
-    }, 200); // Adjust delay as needed
+    }, 200); 
   };
 
   return (

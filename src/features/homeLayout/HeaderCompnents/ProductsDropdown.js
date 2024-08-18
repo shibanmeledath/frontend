@@ -5,16 +5,16 @@ const ProductsDropdown = () => {
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+  
+    clearTimeout(timeoutRef.current);
     setIsOpen(true);
   };
 
   const handleMouseLeave = () => {
+
     timeoutRef.current = setTimeout(() => {
       setIsOpen(false);
-    }, 200); // Adjust delay as needed
+    }, 200);
   };
 
   return (
@@ -23,7 +23,6 @@ const ProductsDropdown = () => {
         className="cursor-pointer flex items-center space-x-2"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        tabIndex="0"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
@@ -33,7 +32,6 @@ const ProductsDropdown = () => {
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             strokeLinecap="round"
@@ -45,7 +43,7 @@ const ProductsDropdown = () => {
       </div>
       {isOpen && (
         <div
-          className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10"
+          className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -53,9 +51,7 @@ const ProductsDropdown = () => {
             {Array.from({ length: 6 }).map((_, index) => (
               <li
                 key={index}
-                className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer transition ease-in-out duration-200"
-                role="menuitem"
-                tabIndex="0"
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-green-400 cursor-pointer"
               >
                 Item {index + 1}
               </li>
