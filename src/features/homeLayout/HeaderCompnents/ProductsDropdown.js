@@ -18,7 +18,7 @@ const ProductsDropdown = () => {
   };
 
   return (
-    <div className="relative inline-block text-left">
+    <div >
       <div
         className="cursor-pointer flex items-center space-x-2"
         onMouseEnter={handleMouseEnter}
@@ -43,7 +43,7 @@ const ProductsDropdown = () => {
       </div>
       {isOpen && (
         <div
-          className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-10"
+          className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg "
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

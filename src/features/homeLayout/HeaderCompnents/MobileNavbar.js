@@ -1,233 +1,211 @@
 import React, { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { NavLink,DropdownLink } from './MobileLinks';
 
 const MobileNavbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [menuState, setMenuState] = useState({
+    isOpen: false,
+    servicesOpen: false,
+    productsOpen: false,
+  })
+  
+  const isMenuOpen = menuState.isOpen;
+  const isServicesOpen=menuState.servicesOpen;
+  const isProductOpen =menuState.productsOpen;
+
+
+
+  const handleLinkClick=()=>{
+    setMenuState(prevState => ({ ...prevState, isOpen: false }))
+  }
+
+  const toggleMenuState=()=>{
+
+    setMenuState(prevState => ({
+      ...prevState,
+      isOpen: !prevState.isOpen,
+      servicesOpen: false,
+      productsOpen: false,
+    }));
+
+  }
+
+  const toggleDropdown = (item) => {
+    setMenuState(prevState => ({
+      ...prevState,
+      [item]: !prevState[item] 
+    }));
+  };
+
+
+
+
+const DropdownList =({isitemopen,item,onClick})=>{
+return(
+  <button
+                className="flex items-center justify-between w-full text-left hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out"
+                onClick={onClick}
+                aria-expanded={isitemopen}
+                aria-controls="services-menu"
+              >
+                <span className="font-semibold">{item}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d={isitemopen
+                      ? "M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
+                      : "M19 9l-7 7-7-7"}
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+)
+}
+
+const MenuIcon=()=>{
+  return(
+    <div className='fixed top-4 right-4 z-[60] '>
+    <button
+      className="text-white hover:text-green-400 focus:outline-none transition duration-300 ease-in-out"
+      onClick={toggleMenuState}
+      aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+    >
+      {!isMenuOpen ? (
+        <span className='text-3xl'>&#9776;</span> 
+      ) : (
+        <span className='text-4xl'>&times;</span> 
+      )}
+    </button>
+  </div>
+  )
+}
+
 
   return (
-    <div>
-      {/* Hamburger Button */}
-      <div className='fixed top-4 right-4 z-[60] lg:hidden'>
-        <button
-          className="relative text-white hover:text-green-400 focus:outline-none transition duration-300 ease-in-out"
-          onClick={() => {
-            setIsOpen(!isOpen);
-            setIsServicesOpen(false);
-            setIsProductsOpen(false);
-          }}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        >
-          {!isOpen ? (
-            <span className='text-3xl'>&#9776;</span> // Hamburger icon
-          ) : (
-            <span className='text-4xl'>&times;</span> // Close icon
-          )}
-        </button>
-      </div>
-
-      {/* Sidebar */}
+    <>
+    
+     
+    <MenuIcon/>
+     
       <aside
         className={`fixed top-0 right-0 w-64 h-screen bg-gray-900 text-white text-lg font-bold transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } z-50`} // Ensuring the sidebar is above other content
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
       >
         <div className="px-6 py-6">
           <h2 className="text-xl font-bold mb-6">CORFOC</h2>
           
           <nav className="space-y-4">
-            <HashLink
-              className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out"
-              to="#home"
-              onClick={() => setIsOpen(false)}
-              aria-label="Home"
+
+            <NavLink
+            to="#home"
+            onClick={handleLinkClick}
             >
+              
               Home
-            </HashLink>
-            <HashLink
-              className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out"
-              to="#about"
-              onClick={() => setIsOpen(false)}
-              aria-label="About"
+            </NavLink>
+
+            <NavLink 
+             to="#about"
+             onClick={handleLinkClick}
             >
               About
-            </HashLink>
+            </NavLink>
 
             {/* Services Dropdown */}
             <div className="py-2">
-              <button
-                className="flex items-center justify-between w-full text-left hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                aria-expanded={isServicesOpen}
-                aria-controls="services-menu"
-              >
-                <span className="font-semibold">Services</span>
-                {isServicesOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
-              </button>
+            <DropdownList
+            isitemopen={isServicesOpen}
+            item='services'
+            onClick={() =>toggleDropdown('servicesOpen')}
+            >
+
+            </DropdownList>
               {isServicesOpen && (
-                <ul id="services-menu" className="ml-6 mt-2 space-y-2">
-                  <li>
-                    <HashLink
+                <ul  className="ml-6 mt-2 space-y-2">
+                 
+                    <DropdownLink
                       to="#service1"
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-green-400"
-                      aria-label="Service 1"
+                      onClick={handleLinkClick}
                     >
                       Service 1
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink
+                    </DropdownLink>
+                  
+                 
+                  <DropdownLink
                       to="#service2"
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-green-400"
-                      aria-label="Service 2"
+                      onClick={handleLinkClick}
                     >
                       Service 2
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink
+                    </DropdownLink>
+                  
+                 
+                  <DropdownLink
                       to="#service3"
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-green-400"
-                      aria-label="Service 3"
+                      onClick={handleLinkClick}
                     >
                       Service 3
-                    </HashLink>
-                  </li>
+                    </DropdownLink>
+                  
                 </ul>
               )}
             </div>
 
-            {/* Products Dropdown */}
+       
             <div className="py-2">
-              <button
-                className="flex items-center justify-between w-full text-left hover:underline underline-offset-4 hover:text-green-400 transition duration-300 ease-in-out"
-                onClick={() => setIsProductsOpen(!isProductsOpen)}
-                aria-expanded={isProductsOpen}
-                aria-controls="products-menu"
-              >
-                <span className="font-semibold">Products</span>
-                {isProductsOpen ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M11.47 7.72a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 1 1-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 0 1-1.06-1.06l7.5-7.5Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                )}
-              </button>
-              {isProductsOpen && (
-                <ul id="products-menu" className="ml-6 mt-2 space-y-2">
-                  <li>
-                    <HashLink
+            <DropdownList
+            isitemopen={isProductOpen}
+            item='Products'
+            onClick={() =>toggleDropdown('productsOpen')}
+            >
+
+            </DropdownList>
+              {isProductOpen && (
+                <ul  className="ml-6 mt-2 space-y-2">
+                 
+                  <DropdownLink
                       to="#product1"
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-green-400"
-                      aria-label="Product 1"
+                      onClick={handleLinkClick}
                     >
                       Product 1
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink
+                    </DropdownLink>
+                  
+                 
+                  <DropdownLink
                       to="#product2"
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-green-400"
-                      aria-label="Product 2"
+                      onClick={handleLinkClick}
                     >
                       Product 2
-                    </HashLink>
-                  </li>
-                  <li>
-                    <HashLink
+                    </DropdownLink>
+                  
+                  
+                  <DropdownLink
                       to="#product3"
-                      onClick={() => setIsOpen(false)}
-                      className="hover:text-green-400"
-                      aria-label="Product 3"
+                      onClick={handleLinkClick}
                     >
                       Product 3
-                    </HashLink>
-                  </li>
+                    </DropdownLink>
+                  
                 </ul>
               )}
+              
             </div>
 
-            <HashLink
-              className="block hover:underline underline-offset-4 hover:text-green-400 py-2 transition duration-300 ease-in-out"
-              to="#contact"
-              onClick={() => setIsOpen(false)}
-              aria-label="Contact Us"
-            >
+            <NavLink
+             to="#contact"
+             onClick={handleLinkClick}
+             >
               Contact Us
-            </HashLink>
+            </NavLink>
           </nav>
-          <button
-            className="w-full text-black bg-green-400 px-5 py-3 hover:bg-white mt-6 transition ease-in-out duration-300"
-            type="button"
-            onClick={() => setIsOpen(false)}
-            aria-label="Let's Talk"
-          >
-            Let's Talk
-          </button>
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 

@@ -37,12 +37,18 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <h2 className="text-white text-4xl font-semibold">CORFOC</h2>
-          <div className="flex items-center">
-            <PCNavbar />
+
+          <div className="hidden lg:flex">
+              <PCNavbar />
           </div>
+          <div className="lg:hidden">
+              <MobileNavbar />
+          </div>
+          
         </div>
       </div>
-      <MobileNavbar/>
+      
+      
     </header>
   );
 };
