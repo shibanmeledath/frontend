@@ -4,6 +4,8 @@ import Main from "./features/homeLayout/Main";
 import PageNotFound from "./features/PageNotFound";
 import Register from "./features/Register";
 import Login from "./features/Login";
+import Logined from "./features/Logined";
+import LoginLayout from "./layouts/LoginLayout";
 function App() {
   return (
     <section className="bg-hero-gradient bg-cover">
@@ -14,6 +16,10 @@ function App() {
         </Route>
         <Route path="registeration" element={<Register />} />
         <Route path="login" element={<Login />} />
+        
+        <Route path="logined" element={<LoginLayout />}> 
+        <Route index element={<Logined />} />
+        </Route>
       </Routes>
     </section>
   );

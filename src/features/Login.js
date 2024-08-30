@@ -3,9 +3,9 @@ import axios from 'axios';
 import { useNavigate,Link } from 'react-router-dom'
 const Login = () => {
   const navigate = useNavigate();
-    const [data, setData] = useState({
+    const [data,setData] = useState({
         email: '',
-        password: '',
+        password: ''
     });
 
     const handleOnChange = (e) => {
@@ -26,8 +26,10 @@ const Login = () => {
                     'Content-Type': 'application/json',
                 },
             });
+            const user = response.data;
+            sessionStorage.setItem('user', JSON.stringify(user));
             console.log(response.data);
-            navigate('/')
+            navigate('/logined', { state: { user } });
         } catch (error) {
             // Log detailed error information
             if (error.response) {
