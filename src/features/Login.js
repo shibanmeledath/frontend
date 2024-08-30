@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 const Login = () => {
   const navigate = useNavigate();
     const [data, setData] = useState({
@@ -87,7 +87,7 @@ const Login = () => {
                 </form>
                 
                 <p className="text-center text-gray-600 mt-6">
-                    Don't have an account? <a href="/frontend/registeration" className="text-blue-500 hover:underline">Create one</a>
+                    Don't have an account? <Link to="/registeration" className='text-blue-500 hover:underline'> Create One</Link> 
                 </p>
             </section>
         </section>
