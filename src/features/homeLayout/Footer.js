@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Footer = () => {
+  const year=new Date().getFullYear();
   return (
     <>
-      <p className='flex justify-center align-middle pb-6 mt-6'>Corfoc@off2024</p>
+      <p className='  flex justify-center align-middle py-3 '>Corfoc@off {year} </p>
     </>
   )
 }

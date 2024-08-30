@@ -18,7 +18,7 @@ const NavLink= ({ to, children ,onClick}) => {
            <HashLink
         className="hover:text-green-400"
         to={to}
-        onClick={onClick} // Use the passed onClick handler
+        onClick={onClick} 
         aria-label={to}
       >
         {children}

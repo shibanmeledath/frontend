@@ -121,7 +121,7 @@ const MenuIcon=()=>{
             <div className="py-2">
             <DropdownList
             isitemopen={isServicesOpen}
-            item='services'
+            item='Services'
             onClick={() =>toggleDropdown('servicesOpen')}
             >
 
@@ -193,7 +193,7 @@ const MenuIcon=()=>{
                   
                 </ul>
               )}
-              
+
             </div>
 
             <NavLink
@@ -202,6 +202,12 @@ const MenuIcon=()=>{
              >
               Contact Us
             </NavLink>
+         <NavLink
+             to="/registeration"
+             onClick={handleLinkClick}
+             >
+              Login
+            </NavLink> 
           </nav>
         </div>
       </aside>

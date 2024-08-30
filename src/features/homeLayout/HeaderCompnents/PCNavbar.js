@@ -17,7 +17,6 @@ const PCNavbar = () => {
            <ServicesDropdown />
         </DropdownLink>
       
-      
         <DropdownLink to="#products">
            <ProductsDropdown />
         </DropdownLink>
@@ -26,6 +25,9 @@ const PCNavbar = () => {
        <NavLink to='#contact'>
         Contact
       </NavLink>
+      <NavLink to='/registeration'>
+        Login
+      </NavLink> 
   
     </nav>
   );
