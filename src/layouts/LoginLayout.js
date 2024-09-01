@@ -1,14 +1,22 @@
 import React from 'react'
-import { Outlet } from "react-router-dom"
-import Header from "../features/homeLayout/HeaderCompnents/Header"
+import { Outlet ,useLocation } from "react-router-dom"
+import Header from "../features/loginLayout/HeaderCompnents/Header"
 import BackToTop from "../features/homeLayout/BackToTop"
 import Footer from '../features/homeLayout/Footer'
+import PageNotFound from '../features/PageNotFound'
 const LoginLayout = () => {
+    const location = useLocation();
+    const { user} = location.state || {};
   return (
     <>
 
     <Header/>
-    <Outlet/>
+    {
+        user 
+        ?( <Outlet />)
+        :(<PageNotFound/>)
+    }
+   
     <BackToTop/>
     <Footer/>
 
