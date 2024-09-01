@@ -87,6 +87,7 @@ const Login = () => {
               id="email"
               required
               name="email"
+              autoComplete='current-email'
               value={data.email}
               onChange={handleOnChange}
             />
@@ -99,6 +100,7 @@ const Login = () => {
               id="password"
               required
               name="password"
+              autoComplete='current-password'
               value={data.password}
               onChange={handleOnChange}
             />

@@ -1,14 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { useNavigate ,Link} from 'react-router-dom'
 import axios from 'axios'
 const Register = () => {
   const navigate = useNavigate();
+  const [messages, setMessages] = useState(' ');
+  const [issuccess, setIssuccess] = useState(false);
+  useEffect(()=>{
+    if(messages){
+        const timer=setTimeout(()=>{
+            setMessages(' ')
+        },1000)
+    return ()=>clearTimeout(timer)
+    }
+   }, [messages]);
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     if (data.password !== data.confirmPassword) {
-      console.error("Passwords do not match");
+      setMessages("Passwords do not match");
+      setIssuccess(false);
       return;
     }
   
@@ -22,21 +33,27 @@ const Register = () => {
           'Content-Type': 'application/json'
         }
       });
-      console.log(response.data);
-      navigate('/login');
-    } catch (error) {
-      // Log detailed error information
-      if (error.response) {
-        console.error('Error response data:', error.response.data);
-        console.error('Error response status:', error.response.status);
-        console.error('Error response headers:', error.response.headers);
-      } else if (error.request) {
-        console.error('Error request data:', error.request);
-      } else {
-        console.error('Error message:', error.message);
+      if(response.data.status === "Success"){
+        setMessages(response.data.message)
+        setIssuccess(true);
+        setTimeout(() => {
+          navigate('/login');
+        }, 1000);
+       
       }
-      console.error('Error config:', error.config);
-    }
+      else{
+          setIssuccess(response.data.message);
+          setIssuccess(false);
+      }
+     
+    } catch (error) {
+      setIssuccess(false);
+      if (error.response && error.response.data && error.response.data.message) {
+          setMessages(error.response.data.message);
+      } else {
+          setMessages("An error occurred during registeration.");
+      }
+  }
   }
   
   const handleOnchange = async (e) => {
@@ -63,6 +80,9 @@ const Register = () => {
       className='mx-auto mb-6 w-24 h-24'
     />
     <h2 className='text-center text-2xl font-semibold text-gray-700 mb-6'>Create your account</h2>
+    <h3 className={`text-center ${issuccess ? 'text-green-600' : 'text-red-700'}`}>
+  {messages}
+</h3>
     
     <form onSubmit={handleSubmit}>
       <div className='mb-4'>
@@ -72,6 +92,7 @@ const Register = () => {
           type="text"  
           id="username"
           name='username'
+          autoComplete="current-username"
           required
           value={data.username}
           onChange={handleOnchange}
@@ -85,6 +106,7 @@ const Register = () => {
           id="email"
           required
           name='email'
+          autoComplete='current-email'
           value={data.email}
           onChange={handleOnchange}
         />
@@ -97,6 +119,7 @@ const Register = () => {
           id="password"
           required
           name='password'
+          autoComplete="new-password"
           value={data.password}
           onChange={handleOnchange}
         />
@@ -109,6 +132,7 @@ const Register = () => {
           id="confirmPassword"
           required
           name='confirmPassword'
+          autoComplete="new-password"
           value={data.confirmPassword}
           onChange={handleOnchange}
         />
