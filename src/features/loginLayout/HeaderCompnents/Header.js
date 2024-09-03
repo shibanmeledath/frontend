@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import PCNavbar from './PCNavbar';
 import MobileNavbar from './MobileNavbar';
+import UserProfile from '../UserProfile';
 const Header = () => {
   const [visible, setVisible] = useState(true);
 
@@ -33,16 +34,20 @@ const Header = () => {
         visible ? 'translate-y-0' : '-translate-y-full'
       } bg-gray-900`}
   
-    >
+    > 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <h2 className="text-white text-4xl font-semibold">CORFOC</h2>
 
           <div className="hidden lg:flex">
               <PCNavbar />
+             
+           
           </div>
           <div className="lg:hidden">
+         
               <MobileNavbar />
+            
           </div>
           
         </div>

@@ -28,7 +28,7 @@ const PCNavbar = () => {
       <NavLink to='/registeration'>
         Login
       </NavLink> 
-  
+      
     </nav>
   );
 };

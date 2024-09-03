@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink,DropdownLink } from './MobileLinks';
+import ProfileIcon from './ProfileIcon';
+import UserProfile from '../UserProfile';
 
 const MobileNavbar = () => {
   const [menuState, setMenuState] = useState({
@@ -98,9 +100,11 @@ const MenuIcon=()=>{
         }`}
       >
         <div className="px-6 py-6">
-          <h2 className="text-xl font-bold mb-6">CORFOC</h2>
-          
+         
+      <UserProfile/>
           <nav className="space-y-4">
+
+ 
 
             <NavLink
             to="#home"
@@ -202,12 +206,7 @@ const MenuIcon=()=>{
              >
               Contact Us
             </NavLink>
-         <NavLink
-             to="/registeration"
-             onClick={handleLinkClick}
-             >
-              Login
-            </NavLink> 
+        
           </nav>
         </div>
       </aside>

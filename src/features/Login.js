@@ -1,24 +1,25 @@
-import React, { useState,useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import api from '../api/Api';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [messages, setMessages] = useState(' ');
+  const [messages, setMessages] = useState('');
   const [issuccess, setIssuccess] = useState(false);
   const [data, setData] = useState({
     email: '',
     password: ''
   });
-  useEffect(()=>{
-    if(messages){
-        const timer=setTimeout(()=>{
-            setMessages(' ')
-        },1000)
-    return ()=>clearTimeout(timer)
+
+  useEffect(() => {
+    if (messages) {
+      const timer = setTimeout(() => {
+        setMessages('');
+      }, 3000); 
+      return () => clearTimeout(timer);
     }
-   }, [messages]);
- 
+  }, [messages]);
+
   const handleOnChange = (e) => {
     setData({
       ...data,
@@ -29,42 +30,37 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('http://localhost:5156/login', {
-            email: data.email,
-            password: data.password,
-        }, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
 
-        if (response.data.status === "Success") {  
-            setIssuccess(true);
-            const user = response.data.data;  // Access the data object correctly
-            setMessages(response.data.message);
-            sessionStorage.setItem('user', JSON.stringify(user));
-            setTimeout(() => {
-              navigate('/logined', { state: { user } });
-            }, 1000);
-            
-        } else {
-          setIssuccess(false);
-            setMessages(response.data.message);
-        }
+      const response = await api.post('/login', {
+        email: data.email,
+        password: data.password,
+      });
+
+      if (response.data.status === "Success") {
+        setIssuccess(true);
+        const user = response.data.data;  
+        setMessages(response.data.message);
+        sessionStorage.setItem('user', JSON.stringify(user));
+        setTimeout(() => {
+          navigate('/logined', { state: { user } });
+        }, 1000);
+      } else {
+        setIssuccess(false);
+        setMessages(response.data.message);
+      }
 
     } catch (error) {
-        setIssuccess(false);
-        if (error.response && error.response.data && error.response.data.message) {
-            setMessages(error.response.data.message);
-        } else {
-            setMessages("An error occurred during login.");
-        }
+      setIssuccess(false);
+      if (error.response && error.response.data && error.response.data.message) {
+        setMessages(error.response.data.message);
+      } else {
+        setMessages("An error occurred during login.");
+      }
     }
-};
-
+  };
 
   return (
-    <section className="bg-gray-100 h-screen flex justify-center items-center">
+    <section className="bg-gray-100 h-screen flex justify-center items-center text-black">
       <section className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
         <img 
           src={`${process.env.PUBLIC_URL}/logo192.png`} 
@@ -73,10 +69,8 @@ const Login = () => {
         />
         <h2 className="text-center text-2xl font-semibold text-gray-700 mb-6">Login to your account</h2>
         <h3 className={`text-center ${issuccess ? 'text-green-600' : 'text-red-700'}`}>
-  {messages}
-</h3>
-
-      
+          {messages}
+        </h3>
         
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -87,7 +81,7 @@ const Login = () => {
               id="email"
               required
               name="email"
-              autoComplete='current-email'
+              autoComplete="current-email"
               value={data.email}
               onChange={handleOnChange}
             />
@@ -100,7 +94,7 @@ const Login = () => {
               id="password"
               required
               name="password"
-              autoComplete='current-password'
+              autoComplete="current-password"
               value={data.password}
               onChange={handleOnChange}
             />
@@ -114,7 +108,7 @@ const Login = () => {
         </form>
         
         <p className="text-center text-gray-600 mt-6">
-          Don't have an account? <Link to="/registeration" className='text-blue-500 hover:underline'> Create One</Link> 
+          Don't have an account? <Link to="/registeration" className='text-blue-500 hover:underline'>Create One</Link> 
         </p>
       </section>
     </section>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { useNavigate ,Link} from 'react-router-dom'
-import axios from 'axios'
+import api from '../api/Api'
 const Register = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState(' ');
@@ -24,14 +24,10 @@ const Register = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:5156/register', {
+      const response = await api.post('/register', {
         username: data.username,
         email: data.email,
         password: data.password
-      }, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
       });
       if(response.data.status === "Success"){
         setMessages(response.data.message)
@@ -72,7 +68,7 @@ const Register = () => {
   return (
     <>
    
-      <section className='bg-gray-100 h-screen flex justify-center items-center'>
+      <section className='bg-gray-100 h-screen flex justify-center items-center text-black'>
   <section className='w-full max-w-md bg-white rounded-lg shadow-lg p-8'>
     <img 
       src={`${process.env.PUBLIC_URL}/logo192.png`}
