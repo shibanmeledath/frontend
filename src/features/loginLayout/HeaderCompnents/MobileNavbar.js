@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { NavLink,DropdownLink } from './MobileLinks';
-import ProfileIcon from './ProfileIcon';
 import UserProfile from '../UserProfile';
 
 const MobileNavbar = () => {
@@ -13,6 +12,7 @@ const MobileNavbar = () => {
   const isMenuOpen = menuState.isOpen;
   const isServicesOpen=menuState.servicesOpen;
   const isProductOpen =menuState.productsOpen;
+
 
 
 
@@ -30,6 +30,7 @@ const MobileNavbar = () => {
     }));
 
   }
+
 
   const toggleDropdown = (item) => {
     setMenuState(prevState => ({
@@ -101,7 +102,7 @@ const MenuIcon=()=>{
       >
         <div className="px-6 py-6">
          
-      <UserProfile/>
+      <UserProfile />
           <nav className="space-y-4">
 
  

@@ -1,30 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfileIcon from './HeaderCompnents/ProfileIcon'; // Ensure this is the correct path to your ProfileIcon component
 
-const LogoutConfirmation = ({ onConfirm, onCancel }) => {
-  return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 h-screen">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-        <h3 className="text-sm font-bold mb-4 text-center text-black">Are you sure you want to log out?</h3>
-        <div className="flex justify-between">
-          <button 
-            onClick={onCancel} 
-            className="w-full mx-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
-          >
-            Cancel
-          </button>
-          <button 
-            onClick={onConfirm} 
-            className="w-full mx-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
-          >
-            Yes
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -34,8 +12,35 @@ const UserProfile = () => {
   // Retrieve the user data from sessionStorage
   const user = JSON.parse(sessionStorage.getItem('user'));
 
+
+
+  const LogoutConfirmation = ({ onConfirm, onCancel }) => {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 h-screen">
+        <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+          <h3 className="text-sm font-bold mb-4 text-center text-black">Are you sure you want to log out?</h3>
+          <div className="flex justify-between">
+            <button 
+              onClick={onCancel} 
+              className="w-full mx-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button 
+              onClick={onConfirm} 
+              className="w-full mx-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const toggleProfile = () => {
     setProfile(!profile);
+   
   };
 
   const handleLogoutClick = () => {
@@ -55,6 +60,14 @@ const UserProfile = () => {
     setProfile(false);
   };
 
+useEffect(() => {
+  if (profile==true){
+    setTimeout(() => {
+      setProfile(false);
+    }, 3000);
+  }
+},[profile])
+
   return (
     <div className="relative">
       <button onClick={toggleProfile}>
@@ -63,6 +76,7 @@ const UserProfile = () => {
 
       {profile && (
         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
+                <p className='ml-3 text-black'>Hello {user?.username}</p>
           <button
             onClick={handleLogoutClick}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-t-lg"
