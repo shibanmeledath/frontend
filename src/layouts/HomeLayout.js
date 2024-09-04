@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom"
-import Header from "../features/homeLayout/HeaderCompnents/Header"
-import BackToTop from "../features/homeLayout/BackToTop"
-import Footer from "../features/homeLayout/Footer"
+import Header from "../components/HeaderCompnents/Header"
+import BackToTop from "../components/BackToTop"
+import Footer from "../components/Footer"
 const HomeLayout = () => {
   return (
     <>

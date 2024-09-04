@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import { NavLink,DropdownLink } from './MobileLinks';
-import UserProfile from '../UserProfile';
+import UserProfile from './UserProfile';
+
 
 const MobileNavbar = () => {
   const [menuState, setMenuState] = useState({
@@ -12,7 +13,8 @@ const MobileNavbar = () => {
   const isMenuOpen = menuState.isOpen;
   const isServicesOpen=menuState.servicesOpen;
   const isProductOpen =menuState.productsOpen;
-
+   
+  const user = JSON.parse(sessionStorage.getItem('user'));
 
 
 
@@ -30,7 +32,6 @@ const MobileNavbar = () => {
     }));
 
   }
-
 
   const toggleDropdown = (item) => {
     setMenuState(prevState => ({
@@ -101,14 +102,16 @@ const MenuIcon=()=>{
         }`}
       >
         <div className="px-6 py-6">
-         
-      <UserProfile />
+          {
+            user&&<UserProfile/>
+          }
+          
+          <h2 className="text-xl font-bold mb-6">CORFOC</h2>
+          
           <nav className="space-y-4">
 
- 
-
             <NavLink
-            to="#home"
+            to="/#home"
             onClick={handleLinkClick}
             >
               
@@ -116,7 +119,8 @@ const MenuIcon=()=>{
             </NavLink>
 
             <NavLink 
-             to="#about"
+            
+             to="/#about"
              onClick={handleLinkClick}
             >
               About
@@ -135,7 +139,7 @@ const MenuIcon=()=>{
                 <ul  className="ml-6 mt-2 space-y-2">
                  
                     <DropdownLink
-                      to="#service1"
+                      to="/#service1"
                       onClick={handleLinkClick}
                     >
                       Service 1
@@ -143,7 +147,7 @@ const MenuIcon=()=>{
                   
                  
                   <DropdownLink
-                      to="#service2"
+                      to="/#service2"
                       onClick={handleLinkClick}
                     >
                       Service 2
@@ -151,7 +155,7 @@ const MenuIcon=()=>{
                   
                  
                   <DropdownLink
-                      to="#service3"
+                      to="/#service3"
                       onClick={handleLinkClick}
                     >
                       Service 3
@@ -172,17 +176,26 @@ const MenuIcon=()=>{
             </DropdownList>
               {isProductOpen && (
                 <ul  className="ml-6 mt-2 space-y-2">
+
+
+                 {user 
+                 ? <DropdownLink
+                 to="/logined"
+                 onClick={handleLinkClick}
+               >
+                 Product Main
+               </DropdownLink>
+                 : <DropdownLink
+                 to="/#product Main"
+                 onClick={handleLinkClick}
+               >
+                 Product Main
+               </DropdownLink>}
                  
-                  <DropdownLink
-                      to="#product1"
-                      onClick={handleLinkClick}
-                    >
-                      Product 1
-                    </DropdownLink>
                   
                  
                   <DropdownLink
-                      to="#product2"
+                      to="/#product2"
                       onClick={handleLinkClick}
                     >
                       Product 2
@@ -190,7 +203,7 @@ const MenuIcon=()=>{
                   
                   
                   <DropdownLink
-                      to="#product3"
+                      to="/#product3"
                       onClick={handleLinkClick}
                     >
                       Product 3
@@ -202,12 +215,20 @@ const MenuIcon=()=>{
             </div>
 
             <NavLink
-             to="#contact"
+             to="/#contact"
              onClick={handleLinkClick}
              >
               Contact Us
             </NavLink>
-        
+            {
+              !user&&<NavLink
+              to="/registeration"
+              onClick={handleLinkClick}
+              >
+               Login
+             </NavLink>
+            }
+          
           </nav>
         </div>
       </aside>

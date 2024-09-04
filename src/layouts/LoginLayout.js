@@ -1,9 +1,9 @@
 import React, { createContext } from 'react'
 import { Outlet} from "react-router-dom"
-import Header from "../features/loginLayout/HeaderCompnents/Header"
-import BackToTop from "../features/homeLayout/BackToTop"
-import Footer from '../features/homeLayout/Footer'
-import PageNotFound from '../features/PageNotFound'
+import Header from "../components/HeaderCompnents/Header"
+import BackToTop from "../components/BackToTop"
+import Footer from '../components/Footer'
+import PageNotFound from '../components/PageNotFound'
 export const  usernameContext=createContext();
 const LoginLayout = () => {
   const user = JSON.parse(sessionStorage.getItem('user'));

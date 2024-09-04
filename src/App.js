@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
-import Main from "./features/homeLayout/Main";
-import PageNotFound from "./features/PageNotFound";
-import Register from "./features/Register";
-import Login from "./features/Login";
+import Main from "./components/homeComponents/Main";
+import PageNotFound from "./components/PageNotFound";
+import Register from "./components/Register";
+import Login from "./components/Login";
 import LoginLayout from "./layouts/LoginLayout";
-import MainLogined from "./features/loginLayout/MainLogined";
+import MainLogined from "./components/logedComponents/MainLogined";
 function App() {
   return (
     <section className="bg-hero-gradient bg-cover">

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ProfileIcon from './HeaderCompnents/ProfileIcon'; // Ensure this is the correct path to your ProfileIcon component
+import ProfileIcon from './ProfileIcon';
+import { usernameContext } from '../../layouts/LoginLayout';
 
 
 
@@ -8,9 +9,7 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const [profile, setProfile] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
-
-  // Retrieve the user data from sessionStorage
-  const user = JSON.parse(sessionStorage.getItem('user'));
+  const username=useContext(usernameContext)
 
 
 
@@ -76,7 +75,7 @@ useEffect(() => {
 
       {profile && (
         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-50">
-                <p className='ml-3 text-black'>Hello {user?.username}</p>
+                <p className='ml-3 text-black'>Hello {username}</p>
           <button
             onClick={handleLogoutClick}
             className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-t-lg"

@@ -9,7 +9,7 @@ const Home = () => {
 
   <div className="flex-1 flex flex-col justify-center text-center lg:text-left">
   <div className='pt-6 sm:pt-8 md:pt-10 lg:pt-12'>
-  <h1 className="font-extrabold text-4xl shadow-lg mt-4 sm:mt-8 md:mt-12 lg:mt-16">
+  <h1 className="font-extrabold text-4xl shadow-lg mt-4 sm:mt-8 md:mt-12 lg:mt-16 text-white">
   Welcome to <span className="text-green-400">Corfoc</span> technologies!!
 </h1>
 
