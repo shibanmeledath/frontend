@@ -2,9 +2,11 @@ import ServicesDropdown from './ServicesDropdown';
 import ProductsDropdown from './ProductsDropdown';
 import { NavLink ,DropdownLink } from './PCLinks'
 import UserProfile from './UserProfile';
+import { useContext } from 'react';
+import { usernameContext } from '../../layouts/LoginLayout';
 const PCNavbar = () => {
   /* const user=useContext(usernameContext) */
-  const user = JSON.parse(sessionStorage.getItem('user'));
+  const user = useContext(usernameContext)
   
   return (
     <nav className=" flex items-center space-x-10 ml-10 text-white text-lg font-bold transition duration-300 ease-in-out">
@@ -38,7 +40,7 @@ const PCNavbar = () => {
         ? 
         <UserProfile/>
       
-        : <NavLink to='/registeration'>
+        : <NavLink to='/login'>
         Login
       </NavLink> 
       }

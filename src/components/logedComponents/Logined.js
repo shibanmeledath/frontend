@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { usernameContext } from '../../layouts/LoginLayout';
+
+import { usernameContext } from '../../layouts/LoginLayout'
 const Logined = () => {
  const username=useContext(usernameContext)
   return (

@@ -1,6 +1,7 @@
-import React, {  useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { NavLink,DropdownLink } from './MobileLinks';
 import UserProfile from './UserProfile';
+import { usernameContext } from '../../layouts/LoginLayout';
 
 
 const MobileNavbar = () => {
@@ -14,7 +15,7 @@ const MobileNavbar = () => {
   const isServicesOpen=menuState.servicesOpen;
   const isProductOpen =menuState.productsOpen;
    
-  const user = JSON.parse(sessionStorage.getItem('user'));
+  const user = useContext(usernameContext);
 
 
 
@@ -222,7 +223,7 @@ const MenuIcon=()=>{
             </NavLink>
             {
               !user&&<NavLink
-              to="/registeration"
+              to="/login"
               onClick={handleLinkClick}
               >
                Login
