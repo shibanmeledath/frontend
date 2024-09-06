@@ -26,7 +26,7 @@ const LoginLayout = () => {
         ) : (
           <PageNotFound />
         )
-      }
+      }  
     </div>
   );
 }

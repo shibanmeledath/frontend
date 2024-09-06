@@ -79,7 +79,6 @@ const Register = () => {
     <h3 className={`text-center ${issuccess ? 'text-green-600' : 'text-red-700'}`}>
   {messages}
 </h3>
-    
     <form onSubmit={handleSubmit}>
       <div className='mb-4'>
         <label className='block text-gray-600' htmlFor="username">Username</label>
@@ -140,14 +139,12 @@ const Register = () => {
         Create Account
       </button>
     </form>
-    
     <p className='text-center text-gray-600 mt-6'>
       Already have an account? <Link to="/login" className='text-blue-500 hover:underline'> Login</Link> 
     </p>
   </section>
 </section>
-
-    </>
+  </>
   )
 }
 

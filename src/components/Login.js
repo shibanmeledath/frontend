@@ -40,7 +40,7 @@ const Login = () => {
         setIssuccess(true);
         const user = response.data.data;  
         setMessages(response.data.message);
-        sessionStorage.setItem('user', JSON.stringify(user));
+        sessionStorage.setItem('user',JSON.stringify(user));
         setTimeout(() => {
           navigate('/logined', { state: { user } });
         }, 1000);
