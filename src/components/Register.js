@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
-import { useNavigate ,Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import api from '../api/Api'
+import Inputs from './Inputs'
+import Forms from './Forms'
 const Register = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState(' ');
@@ -67,83 +69,47 @@ const Register = () => {
   })
   return (
     <>
+  <Forms 
+  title={"Create Your account"} 
+  issuccess={issuccess} 
+  messages={messages} 
+  onSubmit={handleSubmit} 
+  buttonName={"Register"}>
+{
+
+  <>
+        <Inputs 
+        label={"Username"}
+        name={"username"}
+        type={"text"}
+        value={data.username}
+        onchange={handleOnchange}
+        />
+        <Inputs 
+        label={"Email"}
+        name={"email"}
+        type={"email"}
+        value={data.email}
+        onchange={handleOnchange}
+        />
+      <Inputs 
+        label={"Password"}
+        name={"password"}
+        type={"password"}
+        value={data.password}
+        onchange={handleOnchange}
+        />
+        <Inputs 
+        label={"Confirm Password"}
+        name={"confirmPassword"}
+        type={"password"}
+        value={data.confirmPassword}
+        onchange={handleOnchange}
+        />
+  </>
+}
+  </Forms>
    
-      <section className='bg-gray-100 h-screen flex justify-center items-center text-black'>
-  <section className='w-full max-w-md bg-white rounded-lg shadow-lg p-8'>
-    <img 
-      src={`${process.env.PUBLIC_URL}/logo192.png`}
-      alt="Logo" 
-      className='mx-auto mb-6 w-24 h-24'
-    />
-    <h2 className='text-center text-2xl font-semibold text-gray-700 mb-6'>Create your account</h2>
-    <h3 className={`text-center ${issuccess ? 'text-green-600' : 'text-red-700'}`}>
-  {messages}
-</h3>
-    <form onSubmit={handleSubmit}>
-      <div className='mb-4'>
-        <label className='block text-gray-600' htmlFor="username">Username</label>
-        <input 
-          className='w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500' 
-          type="text"  
-          id="username"
-          name='username'
-          autoComplete="current-username"
-          required
-          value={data.username}
-          onChange={handleOnchange}
-        />
-      </div>
-      <div className='mb-4'>
-        <label className='block text-gray-600' htmlFor="email">Email</label>
-        <input 
-          className='w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500' 
-          type="email"  
-          id="email"
-          required
-          name='email'
-          autoComplete='current-email'
-          value={data.email}
-          onChange={handleOnchange}
-        />
-      </div>
-      <div className='mb-4'>
-        <label className='block text-gray-600' htmlFor="password">Password</label>
-        <input 
-          className='w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500' 
-          type="password"  
-          id="password"
-          required
-          name='password'
-          autoComplete="new-password"
-          value={data.password}
-          onChange={handleOnchange}
-        />
-      </div>
-      <div className='mb-6'>
-        <label className='block text-gray-600' htmlFor="confirmPassword">Confirm Password</label>
-        <input 
-          className='w-full mt-2 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500' 
-          type="password"  
-          id="confirmPassword"
-          required
-          name='confirmPassword'
-          autoComplete="new-password"
-          value={data.confirmPassword}
-          onChange={handleOnchange}
-        />
-      </div>
-      <button 
-        type="submit" 
-        className='w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'
-      >
-        Create Account
-      </button>
-    </form>
-    <p className='text-center text-gray-600 mt-6'>
-      Already have an account? <Link to="/login" className='text-blue-500 hover:underline'> Login</Link> 
-    </p>
-  </section>
-</section>
   </>
   )
 }
