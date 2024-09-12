@@ -1,13 +1,20 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import api from '../api/Api'
+import api from '../../api/Api'
 import Inputs from './Inputs'
 import Forms from './Forms'
 const Register = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState(' ');
   const [issuccess, setIssuccess] = useState(false);
+  const[formdata, setFormdata]=useState({
+    username: '',
+    email: '',
+    password:'',
+    confirmPassword: ''
+
+  })
   useEffect(()=>{
     if(messages){
         const timer=setTimeout(()=>{
@@ -19,7 +26,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    if (data.password !== data.confirmPassword) {
+    if (formdata.password !== formdata.confirmPassword) {
       setMessages("Passwords do not match");
       setIssuccess(false);
       return;
@@ -27,9 +34,9 @@ const Register = () => {
   
     try {
       const response = await api.post('/register', {
-        username: data.username,
-        email: data.email,
-        password: data.password
+        username: formdata.username,
+        email: formdata.email,
+        password: formdata.password
       });
       if(response.data.status === "Success"){
         setMessages(response.data.message)
@@ -55,18 +62,12 @@ const Register = () => {
   }
   
   const handleOnchange = async (e) => {
-    setdata({
-      ...data,
+    setFormdata({
+      ...formdata,
       [e.target.name]: e.target.value
     })
   }
-  const[data, setdata]=useState({
-    username: '',
-    email: '',
-    password:'',
-    confirmPassword: ''
 
-  })
   return (
     <>
   <Forms 
@@ -82,28 +83,28 @@ const Register = () => {
         label={"Username"}
         name={"username"}
         type={"text"}
-        value={data.username}
+        value={formdata.username}
         onchange={handleOnchange}
         />
         <Inputs 
         label={"Email"}
         name={"email"}
         type={"email"}
-        value={data.email}
+        value={formdata.email}
         onchange={handleOnchange}
         />
       <Inputs 
         label={"Password"}
         name={"password"}
         type={"password"}
-        value={data.password}
+        value={formdata.password}
         onchange={handleOnchange}
         />
         <Inputs 
         label={"Confirm Password"}
         name={"confirmPassword"}
         type={"password"}
-        value={data.confirmPassword}
+        value={formdata.confirmPassword}
         onchange={handleOnchange}
         />
   </>

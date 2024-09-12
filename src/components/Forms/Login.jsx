@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api/Api';
-import { useNavigate, Link } from 'react-router-dom';
+import api from '../../api/Api';
+import { useNavigate } from 'react-router-dom';
 import Inputs from './Inputs';
 import Forms from './Forms';
 const Login = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState('');
   const [issuccess, setIssuccess] = useState(false);
-  const [data, setData] = useState({
+  const [formdata, setFormData] = useState({
     email: '',
     password: ''
   });
@@ -22,8 +22,8 @@ const Login = () => {
   }, [messages]);
 
   const handleOnChange = (e) => {
-    setData({
-      ...data,
+    setFormData({
+      ...formdata,
       [e.target.name]: e.target.value,
     });
   };
@@ -33,8 +33,8 @@ const Login = () => {
     try {
 
       const response = await api.post('/login', {
-        email: data.email,
-        password: data.password,
+        email: formdata.email,
+        password: formdata.password,
       });
 
       if (response.data.status === "Success") {
@@ -58,24 +58,30 @@ const Login = () => {
         setMessages("An error occurred during login.");
       }
     }
+  
   };
 
   return (<>
-   <Forms title={"Login"} issuccess={issuccess} messages={messages} onSubmit={handleSubmit} buttonName={"Login"}>
+   <Forms 
+   title={"Login"} 
+   issuccess={issuccess}
+    messages={messages} 
+    onSubmit={handleSubmit} 
+    buttonName={"Login"} >
     {
       <>
         <Inputs 
         label={"Email"}
         name={"email"}
         type={"email"}
-        value={data.email}
+        value={formdata.email}
         onchange={handleOnChange}
         />
       <Inputs 
         label={"Password"}
         name={"password"}
         type={"password"}
-        value={data.password}
+        value={formdata.password}
         onchange={handleOnChange}
         />
       </>

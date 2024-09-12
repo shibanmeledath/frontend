@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import HomeLayout from "./layouts/HomeLayout";
 import Main from "./components/homeComponents/Main";
 import PageNotFound from "./components/PageNotFound";
-import Register from "./components/Register";
-import Login from "./components/Login";
+import Register from "./components/Forms/Register";
+import Login from "./components/Forms/Login";
 import LoginLayout from "./layouts/LoginLayout";
 import MainLogined from "./components/logedComponents/MainLogined";
 
