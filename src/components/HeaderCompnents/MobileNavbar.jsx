@@ -106,7 +106,7 @@ const MenuIcon=()=>{
             user&&<UserProfile/>
           }
           
-          <h2 className="text-xl font-bold mb-6">CORFOC</h2>
+          <h2 className="text-xl font-bold mb-6">COMPANY</h2>
           
           <nav className="space-y-4">
 
