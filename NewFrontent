@@ -248,7 +248,7 @@
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800">About Corfoc</h2>
-                    <p class="text-gray-600 mb-4">Founded in 2015, Corfoc has been at the forefront of electronic innovation, designing products that seamlessly integrate into modern lifestyles.</p>
+                    <p class="text-gray-600 mb-4">Founded in 2025, Corfoc has been at the forefront of electronic innovation, designing products that seamlessly integrate into modern lifestyles.</p>
                     <p class="text-gray-600 mb-4">Our mission is to create electronics that are not only functional but also intuitive and aesthetically pleasing, enhancing the way people interact with technology.</p>
                     <p class="text-gray-600 mb-6">With a team of passionate engineers and designers, we've grown from a small startup to a trusted brand available in over 200 local shops and on Amazon worldwide.</p>
                     
@@ -270,20 +270,22 @@
     <section id="products" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">Our Products</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Discover our range of innovative electronic products designed for modern living.</p>
+            <!-- <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Discover our range of innovative electronic products designed for modern living.</p> -->
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">New range of products comming soon.</p>
             
             <!-- Product Filters -->
             <div class="flex flex-wrap justify-center gap-2 mb-8">
-                <button class="filter-btn active px-4 py-2 rounded-full bg-blue-600 text-white" data-filter="all">All Products</button>
-                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-filter="audio">Audio</button>
+                <button class="filter-btn active px-4 py-2 rounded-full bg-blue-600 text-white" data-filter="all">Our Products</button>
+                <!-- <button class="filter-btn active px-4 py-2 rounded-full bg-blue-600 text-white" data-filter="all">All Products</button> -->
+                <!-- <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-filter="audio">Audio</button>
                 <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-filter="smart">Smart Home</button>
-                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-filter="wearable">Wearables</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition" data-filter="wearable">Wearables</button> -->
             </div>
             
             <!-- Product Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="audio">
+                <!-- <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="audio">
                     <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
                          alt="Quantum Wireless Earbuds" 
                          class="w-full h-64 object-cover">
@@ -302,7 +304,7 @@
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
+             Product 2 
                 <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="smart">
                     <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                          alt="Nexus Smart Thermostat" 
@@ -322,7 +324,7 @@
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
+                 Product 3
                 <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="wearable">
                     <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1399&q=80" 
                          alt="Pulse Fitness Tracker" 
@@ -342,7 +344,7 @@
                     </div>
                 </div>
                 
-                <!-- Product 4 -->
+                Product 4 
                 <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="audio">
                     <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                          alt="Aurora Bluetooth Speaker" 
@@ -362,7 +364,7 @@
                     </div>
                 </div>
                 
-                <!-- Product 5 -->
+                 Product 5 
                 <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="smart">
                     <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                          alt="Horizon Smart Bulb" 
@@ -380,24 +382,24 @@
                             <a href="https://www.amazon.com" target="_blank" class="text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition">Buy on Amazon</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- Product 6 -->
                 <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="wearable">
-                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" 
+                    <img src="https://m.media-amazon.com/images/I/71dXM-75dlL._SX679_.jpg" 
                          alt="Vantage Smartwatch" 
                          class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Vantage Smartwatch</h3>
-                        <p class="text-gray-600 mb-4">Premium smartwatch with health tracking and notifications.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">SurgeGuardV1</h3>
+                        <p class="text-gray-600 mb-4">Surge Protector for BLDC Fans</p>
                         <ul class="text-sm text-gray-600 mb-4 space-y-1">
-                            <li><strong>Display:</strong> 1.4" AMOLED</li>
-                            <li><strong>Battery:</strong> Up to 7 days</li>
-                            <li><strong>Features:</strong> GPS, NFC payments, SpO2</li>
+                            <li><strong>⚡Surge Protection:</strong>Protection from Voltage Surges & Spikes</li>
+                            <li><strong>🌩️ Lightning & Transient Defense:</strong>Guards Against Indirect Lightning-Induced Transients</li>
+                            <li><strong>🔍 Status Monitoring:</strong>Indicator – Know Your Device Status Instantly!</li>
                         </ul>
                         <div class="flex justify-between items-center">
-                            <span class="font-bold text-blue-600">$179.99</span>
-                            <a href="https://www.amazon.com" target="_blank" class="text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition">Buy on Amazon</a>
+                            <span class="font-bold text-blue-600">₹249</span>
+                            <a href="https://www.amazon.in/CORFOC-SurgeGuardV1-Surge-Protector-BLDC/dp/B0FKZC99Z4" target="_blank" class="text-sm bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition">Buy on Amazon</a>
                         </div>
                     </div>
                 </div>
@@ -456,15 +458,16 @@
                                 <i class="fas fa-phone text-blue-600 mt-1 mr-4"></i>
                                 <div>
                                     <h4 class="font-medium text-gray-800">Phone</h4>
-                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                    <p class="text-gray-600">+91 75930 41889</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-clock text-blue-600 mt-1 mr-4"></i>
                                 <div>
                                     <h4 class="font-medium text-gray-800">Business Hours</h4>
-                                    <p class="text-gray-600">Monday - Friday: 9AM - 6PM</p>
-                                    <p class="text-gray-600">Saturday: 10AM - 4PM</p>
+                                    <p class="text-gray-600">Monday - Friday: 10AM - 6:30PM</p>
+                                    <p class="text-gray-600">Saturday: 10AM - 5PM</p>
+                                    <p class="text-gray-600">Sunday: Closed</p>
                                 </div>
                             </div>
                         </div>
@@ -494,9 +497,10 @@
                             <div class="flex items-start mb-3">
                                 <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-4"></i>
                                 <div>
-                                    <p class="text-gray-800">123 Tech Park Drive</p>
-                                    <p class="text-gray-600">Suite 400</p>
-                                    <p class="text-gray-600">San Francisco, CA 94107</p>
+                                    <p class="text-gray-800">11/123A</p>
+                                    <p class="text-gray-800">Mattathilpady Road</p>
+                                    <p class="text-gray-600">Vembily, Kunnathunadu, Ernakulam</p>
+                                    <p class="text-gray-600">Kerala, India 683565</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -537,9 +541,7 @@
                 
                 <div class="lg:w-1/2">
                     <div class="map-container">
-                        <img src="https://maps.googleapis.com/maps/api/staticmap?center=37.7749,-122.4194&zoom=13&size=800x600&maptype=roadmap&markers=color:red%7C37.7749,-122.4194&key=YOUR_API_KEY" 
-                             alt="Map of Corfoc Headquarters location" 
-                             class="map-image">
+                        <iframe class="map-image" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.0655477952573!2d76.40935827367649!3d10.011444590094516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080b6c43b7365d%3A0xa3161b8aea2e80f6!2sCORFOC!5e0!3m2!1sen!2sin!4v1754652894328!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <p class="text-sm text-gray-500 mt-2">Note: This is a static map image. For interactive directions, please use your preferred mapping service.</p>
                 </div>
@@ -569,9 +571,9 @@
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <i class="fas fa-microchip text-2xl text-blue-400"></i>
-                        <span class="text-2xl font-bold">CORFOC</span>
+                   <span class="text-2xl font-bold">CORFOC<sup>™</sup></span>
                     </div>
-                    <p class="text-gray-400 mb-4">Innovative electronics for modern living.</p>
+                    <p class="text-gray-400 mb-4">Correctly focused on innovation that serves you</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
@@ -615,7 +617,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2023 Corfoc Electronics. All rights reserved.</p>
+               <p>&copy; <script>document.write(new Date().getFullYear());</script> Corfoc All rights reserved.</p>
             </div>
         </div>
     </footer>
