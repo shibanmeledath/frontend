@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +40,117 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Dark mode styles */
+        [data-theme="dark"] {
+            background-color: #1f2937;
+            color: #e5e7eb;
+        }
+
+        [data-theme="dark"] .bg-white {
+            background-color: #374151;
+        }
+
+        [data-theme="dark"] .bg-gray-50 {
+            background-color: #1f2937;
+        }
+
+        [data-theme="dark"] .bg-gray-100 {
+            background-color: #4b5563;
+        }
+
+        [data-theme="dark"] .bg-blue-900 {
+            background-color: #1e3a8a;
+        }
+
+        [data-theme="dark"] .bg-blue-800 {
+            background-color: #1e40af;
+        }
+
+        [data-theme="dark"] .bg-blue-600 {
+            background-color: #2563eb;
+        }
+
+        [data-theme="dark"] .bg-gray-200 {
+            background-color: #6b7280;
+        }
+
+        [data-theme="dark"] .text-gray-800 {
+            color: #d1d5db;
+        }
+
+        [data-theme="dark"] .text-gray-600 {
+            color: #9ca3af;
+        }
+
+        [data-theme="dark"] .text-gray-700 {
+            color: #9ca3af;
+        }
+
+        [data-theme="dark"] .text-blue-600 {
+            color: #60a5fa;
+        }
+
+        [data-theme="dark"] .text-blue-800 {
+            color: #93c5fd;
+        }
+
+        [data-theme="dark"] .border-gray-300 {
+            border-color: #6b7280;
+        }
+
+        [data-theme="dark"] .border-gray-200 {
+            border-color: #4b5563;
+        }
+
+        [data-theme="dark"] .bg-blue-50 {
+            background-color: #1e40af;
+        }
+
+        [data-theme="dark"] .text-gray-400 {
+            color: #9ca3af;
+        }
+
+        [data-theme="dark"] .product-card:hover {
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .hero-image {
+                height: 60vh;
+            }
+            
+            .hero-image h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-image p {
+                font-size: 1rem;
+            }
+
+            .product-card img {
+                height: 200px;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .hero-image {
+                height: 70vh;
+            }
+            
+            .hero-image h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image p {
+                font-size: 1.25rem;
+            }
+
+            .product-card img {
+                height: 240px;
+            }
+        }
     </style>
 </head>
 <body class="font-sans bg-gray-50">
@@ -50,6 +161,11 @@
                 <i class="fas fa-microchip text-2xl text-blue-300"></i>
                 <a href="#home" class="text-2xl font-bold">CORFOC</a>
             </div>
+            
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-blue-800 transition">
+                <i class="fas fa-moon text-xl"></i>
+            </button>
             
             <!-- Mobile menu button -->
             <button id="mobile-menu-button" class="md:hidden focus:outline-none">
@@ -79,8 +195,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero-image flex items-center justify-center text-white">
         <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Innovative Electronics for Modern Life</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Corfoc designs and builds high-quality electronic products that enhance your daily experiences.</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Innovative Electronics for Modern Life</h1>
+            <p class="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto">Corfoc designs and builds high-quality electronic products that enhance your daily experiences.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">Explore Products</a>
                 <a href="#location" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">Find Local Shops</a>
@@ -93,7 +209,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Corfoc?</h2>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 <div class="text-center p-6 rounded-lg hover:bg-gray-50 transition">
                     <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
                         <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
@@ -165,7 +281,7 @@
             </div>
             
             <!-- Product Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
                 <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="audio">
                     <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
@@ -308,7 +424,7 @@
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold mb-6 text-gray-800">Send Us a Message</h3>
-                    <form id="contact-form" class="space-y-4">
+                    <div id="contact-form" class="space-y-4">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                             <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
@@ -322,7 +438,7 @@
                             <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-300">Send Message</button>
-                    </form>
+                    </div>
                 </div>
                 
                 <div class="md:w-1/2 space-y-6">
@@ -437,10 +553,10 @@
             <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">Subscribe to our newsletter for product updates, special offers, and tech tips.</p>
             
-            <form class="max-w-md mx-auto flex">
+            <div class="max-w-md mx-auto flex">
                 <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-900">
                 <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-r-lg font-semibold transition duration-300">Subscribe</button>
-            </form>
+            </div>
             
             <p class="text-sm mt-4 text-blue-200">We respect your privacy. Unsubscribe at any time.</p>
         </div>
@@ -449,7 +565,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <i class="fas fa-microchip text-2xl text-blue-400"></i>
@@ -510,6 +626,29 @@
     </button>
 
     <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Load saved theme from localStorage
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            icon.className = theme === 'light' ? 'fas fa-moon text-xl' : 'fas fa-sun text-xl';
+        }
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -564,20 +703,22 @@
         // Contact form submission (simulated)
         const contactForm = document.getElementById('contact-form');
         
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real implementation, you would send this data to a server
-            // For this static demo, we'll just show an alert
-            alert(`Thank you for your message, ${name}! We'll get back to you at ${email} soon.`);
-            
-            // Reset form
-            contactForm.reset();
+        contactForm.addEventListener('click', (e) => {
+            if (e.target.type === 'submit') {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                // In a real implementation, you would send this data to a server
+                // For this static demo, we'll just show an alert
+                alert(`Thank you for your message, ${name}! We'll get back to you at ${email} soon.`);
+                
+                // Reset form
+                contactForm.querySelectorAll('input, textarea').forEach(input => input.value = '');
+            }
         });
     </script>
 </body>
